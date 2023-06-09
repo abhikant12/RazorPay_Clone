@@ -52,43 +52,43 @@
 
                         <div class="flex space-x-6">                               <!-- When you need to style an element based on the state of some parent element, mark the parent with the group class, and use 'group-*'       
                                                                                     modifiers like group-hover , here Payment is parent and when we hover on it one blue line appear that is child so we use group here --->
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group hidden lg:block">
                                     <a href="#">Payments</a>
                                     <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200" ></div>
                                     </div>                                           <!-- group-hover:block   this line means when we hover group means parent then it display block and initially display is hidden-->
 
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group  hidden lg:block">
                                     <a href="#">Banking</a>
                                     <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200" ></div>
                                     </div>
+                                                                                     <!-- hidden lg:block  this line is for responsive means when the screen size is large then it is visible(block) otherwise it is hidden-->
 
-
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group  hidden lg:block">
                                     <a href="#">Corporate Card</a>
                                     </div>
 
 
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group  hidden lg:block">
                                     <a href="#">Payroll</a>
                                     </div>
 
 
                                     
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group  hidden lg:block">
                                     <a href="#">Resources</a>
                                     <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200" ></div>
                                     </div>
 
 
                                     
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group  hidden lg:block">
                                     <a href="#">Support</a>
                                     <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200" ></div>
                                     </div>
                                     
 
                                     
-                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group">
+                                    <div class="text-white font-mullish py-7 hover:text-lightBlue cursor-pointer transition-all duration-200 relative group hidden lg:block">
                                     <a href="#">Pricing</a>
                                     <div class="absolute bottom-0 w-full h-1 bg-lightBlue hidden group-hover:block transition-all duration-200" ></div>
                                     </div>
@@ -97,22 +97,15 @@
 
                 
                         <div class="flex space-x-4">
-                            <img src="./images/india-flag.svg" width="28px" height="20px" >                          
+                            <img src="./images/india-flag.svg" width="28px" height="20px" class="hidden lg:block">                        
                             <button class="py-3 px-5 font-mullish text-white border-lightBlue border rounded-sm text-sm  font-bold"> Log in </button>
                             
-                            <button class="py-3 px-4 font-mullish rounded-sm text-sm font-bold
-                            bg-white text-lightBlue300 border transition-all duration-200
-                            hover:text-lightBlue500 flex"> Sign Up
-                            <svg
-                            viewBox="0 0 24 24"
-                            focusable="false"
-                            class="w-[14px] h-[14px] ml-3"
-                              >
-                            <path
-                              fill="currentColor"
-                              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                            ></path>
-                          </svg></button>
+                            <button class="py-3 px-4 font-mullish rounded-sm text-sm font-bold bg-white text-lightBlue300 border transition-all duration-200 hover:text-lightBlue500 flex flex-row "> 
+                             Sign Up
+                                <svg viewBox="0 0 24 24" focusable="false" class="w-[14px] h-[14px] ml-3 mt-1 " > 
+                                <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" ></path>
+                                </svg>
+                            </button>
                         </div> 
 
 
@@ -123,8 +116,9 @@
 
  <!--Hero Section-->
           <section class="relative bg-deepBlue">
-
-                 <div class="w-10/12 max-w-[1080px] flex flex-row justify-between items-center mx-auto ">
+                                                         <!-- here only "flex flex-row" is applied before but for resposive "flex sm:flex-col lg:flex-row" is applied means for large size of screen -> flex-row So lg:flex-row  and
+                                                         for small size -> flex-col So sm:flex-col  but when screen is extra small means less then 640px then item are in row so we have to put this  "flex  flex-col lg:flex-row" when screen is large then flex-row and otherwise flex-col -->
+                 <div class="w-10/12 max-w-[1080px] flex flex-col lg:flex-row justify-between items-center mx-auto ">
 
                         <!-- left part -->
                         <div class="space-y-8">
@@ -162,10 +156,11 @@
               <div class="relative w-11/12 max-w-[1080px] mx-auto pt-4">
 
                           <!-- heading -->                                    <!-- To horizontally , center a block element (like <div>), use margin: auto;  The element will then take up the specified width, and the remaining space will be split equally between the two margins: -->
-                          <h2 class="font-mullish text-center text-2xl leading-[1.2] font-extrabold"> Accept Payments with Razorpay Payment Suite </h2>
+                          <h2 class="font-mullish text-center text-2xl leading-[1.2] font-extrabold  hidden md:block"> Accept Payments with Razorpay Payment Suite </h2>
+                          <h2 class="font-mullish text-center text-2xl leading-[1.2] font-extrabold  md:hidden"> Explore Razorpay Payment Suite </h2>
                           <div class="w-6 h-1 bg-greenLight flex justify-center m-auto mt-4 mb-6"></div>       <!-- to center the line we use m-auto (margin auto) -->      
 
-                          
+                                                                            <!-- two <h2> we use for (responsive) one is "hidden md:block"  and other is "md:hidden"   means if screen_size >= medium then first is visible and 2nd is hidden else  1st is hidden 2nd is visilbe -->
                           <!-- content box -->
                           <div class="w-full min-h-[520px] bg-white flex rounded-md relative p-10 py-12 border mt-20">
 
@@ -203,28 +198,29 @@
                                          </ul>
 
                                     <!-- for button and hyperlink -->
-                                    <div class="flex flex-row items-center space-x-4 ">  
+                                    <div class="flex flex-col-reverse md:flex-row items-center space-x-4 ">          <!-- flex flex-col-reverse md:flex-row  (responsive) means if screen_size is >= medium then flex-row otherwise flex-col-reverse-->
                                                                       
-                                          <button class="bg-lightBlue w-fit text-white py-[14px] px-[18px] rounded-md font-mullish font-bold hover:bg-lightBlue500 translate-all duration-200">Sign Up Now</button>                                                          
+                                          <button class="bg-lightBlue w-full md:w-fit text-white py-[14px] px-[18px] rounded-md font-mullish font-bold hover:bg-lightBlue500 translate-all duration-200">Sign Up Now</button>                                                          
                                           <!-- hyperlink -->
-                                          <div class="flex items-center cursor-pointer group">
+                                          <div class="flex self-start md:self-center cursor-pointer group">
                                               <a href="#"  class="font-mullish font-bold text-lightBlue500   group-hover:text-grayBlue transition-all duration-200" >Know More</a>                                                                                                   
                                               <i data-feather="chevron-right" class="w-5 h-5 text-lightBlue500   group-hover:text-grayBlue transition-all duration-200"></i>                                                                                                                 
                                            </div>
-                                     </div>
-
+                                     </div>                                              <!--w-full md:w-fit  (responsive) means if screen_size >= medium  then w-fit otherwise w-full -->
+                                                                                        <!-- self-start md:self-center  (responsive) means if screen_size >= medium  then  self-center(item is horizontally center) otherwise self-start (at left side (x-axis)) -->
                                 </div>
                                
-                              <!-- Right part -->
-                                <img src="./images/payment-suite.png" alt="" class="max-w-[600px] absolute right-0 bottom-0">                                      
-                              
+                              <!-- Right part -->                         
+                                <img src="./images/payment-suite.png" alt="" class=" absolute right-0 bottom-0  hidden md:max-w-[400px]  lg:max-w-[600px] md:block lg:block">                                      
+                                                                                         <!-- hidden md:max-w-[400px]  lg:max-w-[600px] md:block lg:block   this line is for responsive  means initially image is hidden and when 
+                                                                                               screen size is medium then image_widht is 400px and image is visible(block) and in large case image_width is 600px and visible(block) -->
                           </div>
 
 
 
  
-                          <div class="w-full grid grid-cols-3 gap-4 mt-10">
-
+                          <div class="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 mt-10">
+                                                                                 <!-- grid grid-cols-1 md:grid-cols-2   (responsive)  if screen_size if >= large then grid-cols-3 and  if screen_sz >= medinum then grid-cols-2 otherwise grid-cols-1  -->
                                 <!-- Box 1 -->
                                 <div class="w-full min-h-[15rem] relative cursor-pointer">
                                     <img src="./images/payment-link-icon.svg" alt=""  class="bg-lightBlue absolute right-3 top-3 w-12 h-12 rounded-full z-[8] transition-all duration-200">
@@ -254,7 +250,7 @@
                     
                                     <!-- box -content  -->
                                     <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
-                                        text part
+                                       
                                         <div>
                                             <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
                                             <p class="font-mullish text-grayText mt-6">  Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>                                         
@@ -299,7 +295,7 @@
                   
                                   <!-- box -content  -->
                                   <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
-                                      text part
+                                     
                                       <div>
                                           <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
                                           <p class="font-mullish text-grayText mt-6">  Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>                                         
@@ -344,7 +340,7 @@
                     
                                     <!-- box -content  -->
                                     <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
-                                        text part
+                                       
                                         <div>
                                             <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
                                             <p class="font-mullish text-grayText mt-6">  Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>                                         
@@ -389,7 +385,7 @@
                     
                                     <!-- box -content  -->
                                     <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
-                                        text part
+                                        
                                         <div>
                                             <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
                                             <p class="font-mullish text-grayText mt-6">  Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>                                         
@@ -434,7 +430,7 @@
                     
                                     <!-- box -content  -->
                                     <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
-                                        text part
+                                       
                                         <div>
                                             <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
                                             <p class="font-mullish text-grayText mt-6">  Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>                                         
@@ -478,7 +474,7 @@
                     
                                     <!-- box -content  -->
                                     <div class="z-[100] absolute w-full h-full flex flex-col justify-between pl-5 py-6 pr-8">
-                                        text part
+                                       
                                         <div>
                                             <h3 class="font-mullish font-bold text-deepBlueHead leading-[1.2] text-[1.375rem]">Payment Links</h3>
                                             <p class="font-mullish text-grayText mt-6">  Share payment link via an email, SMS, messenger, chatbot etc. and get paid immediately</p>                                         
@@ -547,26 +543,19 @@
                                         <span>View financial insights at a glance </span>    
                                     </li>
                                 </ul>
-
-                                <div class="flex flex-col-reverse md:flex-row w-full items-center space-x-4 ">
+                                                                                                    
+                                <div class="flex flex-col-reverse md:flex-row  w-full items-center space-x-4 ">                     <!-- flex flex-col-reverse md:flex-row  (responsive)-->
                                     <button
                                     class="relative bg-lightBlue flex items-center 
-                                    place-content-center md:justify-start text-white py-[14px] px-[18px] md:pr-[90px] rounded-md
+                                    place-content-center md:justify-start text-white py-[14px] px-[18px] md:pr-[90px] rounded-md      
                                     font-mullish font-bold hover:bg-lightBlue500 transition-all duration-200
-                                    self-stretch md:w-fit">
+                                    self-stretch md:w-fit">                                                                                  <!-- self-stretch md:w-fit  (responsive)-->
                                         Sign Up
                                         <div class="w-12 h-[60px] bg-greenLight absolute right-6 skew-x-[20deg] flex justify-center items-center">
                                             <!--arrow-->
-                                            <svg
-                                                viewBox="0 0 24 24"
-                                                focusable="false"
-                                                class="w-[20px] h-[20px] -skew-x-[20deg] "
-                                            >
-                                                <path
-                                                fill="currentColor"
-                                                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-                                                ></path>
-                                           </svg>
+                                            <svg viewBox="0 0 24 24" focusable="false" class="w-[20px] h-[20px] -skew-x-[20deg] "> 
+                                                <path fill="currentColor" d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"  ></path>
+                                            </svg>
                                         </div>
                                     </button>
                                     <!--hyperlink wala-->
@@ -578,15 +567,15 @@
                             </div>
 
                             <!--background image for content box-->
-                            <img src="./images/buisness-banking.png" alt="" class="max-w-[600px] absolute right-0 bottom-0 z-4 hidden md:max-w-[400px] lg:max-w-[600px] md:block lg:block">
-                       
-                        </div>
+                            <img src="./images/buisness-banking.png" alt="" class="max-w-[600px] absolute right-0 bottom-0 z-4  hidden md:max-w-[400px] lg:max-w-[600px] md:block lg:block">
+                                                                                                                             <!--hidden md:max-w-[400px] lg:max-w-[600px] md:block lg:block  (responsive) -->
+                        </div>               
 
 
 
         
                         <!--card box-->
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-4 my-14">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-4 my-14">                    <!-- grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3   (responsive)-->
 
                             <!--box1-->
                             <div class="w-full min-h-[15rem] relative cursor-pointer featureCard2">
@@ -914,7 +903,7 @@
  <!--join razorpay section-->
          <section class="bg-[#f5f8fe] relative pt-40 pb-12 -mt-[200px] -z-[100]">
 
-            <div class="w-11/12 max-w-[1080px] mx-auto relative flex flex-row md:flex-row">
+            <div class="w-11/12 max-w-[1080px] mx-auto relative flex flex-col md:flex-row">                        <!--flex flex-col md:flex-row  (responsive)-->
 
                 <!--left part-->
                 <div class="flex flex-col justify-center w-full md:max-w-[calc(100%-500px)] sm:my-16">
@@ -962,22 +951,36 @@
                 </button>
                 
                 <!-- main content -->
-                <div class="flex flex-row  max-w-[960px] items-center mx-auto my-20 space-x-[10rem]">
+                <div class="flex flex-col xl:flex-row  max-w-[960px] items-center mx-auto my-20 space-x-[10rem]">                     <!--flex flex-col xl:flex-row   (responsive) -->
                     <!--=left part-->
                     <div>
                         <img src="./images/testimonial.jpg" alt="" height="320px" width="320px" class="rounded-xl">
                     </div>
 
                     <!-- right part -->
-                    <div class="max-w-[400px] flex flex-col"> 
-                        <img src="./images/quotes.svg" alt="" width="35px" height="40px" class="-mb-2 xl:order-1">
-                        <p class="font-mullish text-3xl font-extralight xl:order-1"> Readymade Closed Wallet Solution For Quick Refunds </p>
-                        <a href="#" class="text-grayText italic underline xl:order-1">Learn More</a>
-                        <p class="font-mullish font-extrabold text-2xl -order-1 xl:order-1">Lorem Ipsum</p>
-                        <p class="font-mullish font-medium xl:order-1">CEO, XYZ Engineering Company</p>
-                        <img src="./images/fake-company-logo.png" alt="" width="80px" height="40px" class=" xl:order-1">
-                    </div>
+                    <div class="max-w-[400px] hidden xl:block ">                                                                    
+                        <img src="./images/quotes.svg" alt="" width="35px" height="40px" class="-mb-2 ">
+                        <p class="font-mullish text-3xl font-extralight "> Readymade Closed Wallet Solution For Quick Refunds </p>
+                        <a href="#" class="text-grayText italic underline ">Learn More</a>
+                        <p class="font-mullish font-extrabold text-2xl ">Abhikant Singh</p>
+                        <p class="font-mullish font-medium ">CEO, XYZ Engineering Company</p>
+                        <img src="./images/fake-company-logo.png" alt="" width="80px" height="40px">
+                    </div> 
+
+                    <div class="flex flex-col xl:hidden max-w-[360px] ">         
+                        <p class="font-mullish font-extrabold text-2xl mt-8 ">Abhikant Singh</p>     
+                        <p class="font-mullish font-medium -ml-5">CEO, XYZ Engineering Company</p>   
+                        <img src="./images/fake-company-logo.png" alt="" width="80px" height="40px"  class="ml-16">  
+                        <div class="-ml-24">                                                       
+                        <img src="./images/quotes.svg" alt="" width="35px" height="40px" class="-mb-2 ">
+                        <p class="font-mullish text-3xl font-extralight "> Readymade Closed Wallet Solution For Quick Refunds </p>
+                        <a href="#" class="text-grayText italic underline ">Learn More</a>
+                        </div>
+                    </div>  
+                    
                 </div>
+
+                
 
                  <!-- 6 dot wala div-->
                 <div class="w-full flex flex-row mx-auto space-x-2 justify-center">
@@ -1049,7 +1052,33 @@
  <!----------------------------------  Footer   ---------------------------------->
 
 
+     <section>
+        <div class = "grid-cols-4 ">
+          
+        <!--col 1-->
+            <div>
 
+            </div>
+
+         <!--col 2-->
+            <div>
+
+            </div>
+
+          <!--col 3-->
+            <div>
+
+            </div>
+
+         <!--col 4-->
+            <div>
+
+            </div>
+
+
+
+        </div>
+     </section>
 
 
 
